@@ -1,0 +1,26 @@
+2020-09-16 20:54:34,625 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-09-16 20:54:34,625 INFO Included extra file "/etc/supervisor/conf.d/laravel-worker.conf" during parsing
+2020-09-16 20:54:34,628 INFO supervisord started with pid 1
+2020-09-16 20:54:35,631 INFO spawned: 'laravel-worker_00' with pid 8
+2020-09-16 20:54:35,632 INFO spawned: 'laravel-worker_01' with pid 9
+2020-09-16 20:54:35,633 INFO spawned: 'laravel-worker_02' with pid 10
+2020-09-16 20:54:35,634 INFO spawned: 'laravel-worker_03' with pid 11
+2020-09-16 20:54:35,639 INFO spawned: 'php-fpm' with pid 12
+2020-09-16 20:54:35,646 INFO spawned: 'misc' with pid 13
+2020-09-16 20:54:35,696 INFO exited: misc (exit status 0; not expected)
+2020-09-16 20:54:37,061 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-16 20:54:37,062 INFO success: laravel-worker_01 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-16 20:54:37,062 INFO success: laravel-worker_02 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-16 20:54:37,062 INFO success: laravel-worker_03 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-16 20:54:37,062 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-16 20:54:37,063 INFO spawned: 'misc' with pid 57
+2020-09-16 20:54:37,073 INFO reaped unknown pid 30
+2020-09-16 20:54:37,099 INFO exited: misc (exit status 0; not expected)
+2020-09-16 20:54:39,101 INFO spawned: 'misc' with pid 76
+2020-09-16 20:54:39,114 INFO reaped unknown pid 75
+2020-09-16 20:54:39,139 INFO exited: misc (exit status 0; not expected)
+2020-09-16 20:54:42,403 INFO spawned: 'misc' with pid 95
+2020-09-16 20:54:42,414 INFO reaped unknown pid 94
+2020-09-16 20:54:42,439 INFO exited: misc (exit status 0; not expected)
+2020-09-16 20:54:43,440 INFO gave up: misc entered FATAL state, too many start retries too quickly
+2020-09-16 20:55:01,502 INFO reaped unknown pid 119
