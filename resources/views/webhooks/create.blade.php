@@ -7,7 +7,7 @@
                 <div class="card-header">{{ __('Create webhook') }}</div>
 
                 <div class="card-body">
-                    <webhook-form></webhook-form>
+                    <webhook-form @if(isset($webhook)):webhook="{{ json_encode($webhook) }}" @endif :user-id="{{ auth()->user()->id }}" base-url="{{ config('app.url') }}"></webhook-form>
                 </div>
             </div>
         </div>

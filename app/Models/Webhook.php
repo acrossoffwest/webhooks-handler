@@ -22,7 +22,19 @@ class Webhook extends Model
         ],
         'out' => [
             'searchable' => true,
+        ],
+        'user_id' => [
+            'searchable' => false
         ]
+    ];
+
+    protected $appends = [
+        'endpoint'
+    ];
+
+    protected $casts = [
+        'default_headers' => 'array',
+        'default_payload' => 'array'
     ];
 
     protected $guarded = ['id'];
@@ -35,7 +47,7 @@ class Webhook extends Model
     public function getEndpointAttribute()
     {
         return route('endpoints', [
-            'user_id' => '',
+            'user_id' => $this->user_id,
             'slug' => $this->in
         ]);
     }

@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Broadcast;
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+
+Broadcast::channel('webhooks.{webhook}', function (\App\Models\User $user, \App\Models\Webhook $webhook) {
+    return $user->id === $webhook->user_id;
+});

@@ -26,6 +26,11 @@ Route::middleware('auth:web')->group(function () {
     Route::get('api/webhooks', [\App\Http\Controllers\Api\WebhookController::class, 'index']);
 });
 
-Route::any('api/webhook/endpoints/{user_id}/{slug}', function ($userId, $slug) {
-    dd(\App\Models\Webhook::query()->where('user_id', $userId)->where('in', $slug)->get());
-});
+Route::any('api/webhook/endpoints/{user_id}/{slug}', 'App\Http\Controllers\WebhooksHandlerController')->name('endpoints');
+Route::any('api/write/log', function () {
+    logs()->info('TEST REQUEST');
+    return response()->json([
+        'headers' => request()->header(),
+        'payload' => request()->all()
+    ]);
+})->name('api.write.log');

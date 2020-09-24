@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Webhooks') }} <b-link href="/webhooks/create" class="btn btn-sm btn-success">Add</b-link></div>
                 <div class="card-body">
-                    <webhooks></webhooks>
+                    <webhooks :user-id="{{ auth()->user()->id }}" base-url="{{ config('app.url') }}"></webhooks>
                 </div>
             </div>
         </div>

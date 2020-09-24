@@ -1,39 +1,34 @@
 <template>
     <div>
-        <data-table
-            :columns="columns"
-            url="/api/webhooks"
-        />
+        <div class="row" v-if="models" v-for="model in models">
+            <div class="col-12">
+                <b>{{ model.name }}</b>:<br>
+                <p><a :href="model.endpoint">{{ model.endpoint }}</a> -> <a :href="model.out">{{ model.out }}</a></p>
+                <p><a :href="`/webhooks/${model.id}`">Open</a></p>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name: "Webhooks",
+        props: {
+            baseUrl: {
+                type: String,
+                required: true
+            },
+            userId: {
+                type: Number,
+                required: true
+            }
+        },
+        async created () {
+            await this.loadWebhooks()
+        },
         data() {
             return {
-                columns: [
-                    {
-                        label: 'ID',
-                        name: 'id',
-                        orderable: true,
-                    },
-                    {
-                        label: 'Name',
-                        name: 'name',
-                        orderable: true,
-                    },
-                    {
-                        label: 'In',
-                        name: 'in',
-                        orderable: true,
-                    },
-                    {
-                        label: 'Out',
-                        name: 'out',
-                        orderable: true,
-                    }
-                ]
+                models: null
             }
         },
         computed: {
@@ -44,6 +39,15 @@
                 return {
                     Authorization: window.axios.defaults.headers.common['Authorization']
                 }
+            }
+        },
+        methods: {
+            fullUrl (slug) {
+                return slug ? `${this.baseUrl}/api/webhook/endpoints/${this.userId}/${slug}` : null
+            },
+            async loadWebhooks () {
+               const {data: {data}} = await axios.get('api/webhooks')
+               this.models = data
             }
         }
     }

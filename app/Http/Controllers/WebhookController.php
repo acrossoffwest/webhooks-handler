@@ -66,7 +66,7 @@ class WebhookController extends Controller
      */
     public function show(Webhook $webhook)
     {
-        return view('webhooks.show')->with('webhook', $webhook);
+        return view('webhooks.create')->with('webhook', $webhook);
     }
 
     /**
@@ -87,9 +87,14 @@ class WebhookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Webhook $webhook)
     {
-        //
+        $data = $request->all();
+        unset($data['_method']);
+        unset($data['_token']);
+        $webhook->update($data);
+
+        return view('webhooks.create')->with('webhook', $webhook->fresh());
     }
 
     /**

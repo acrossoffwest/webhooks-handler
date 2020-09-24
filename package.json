@@ -27,7 +27,10 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.17.1",
+        "laravel-echo": "^1.8.1",
         "laravel-vue-datatable": "^0.5.13",
-        "v-jsoneditor": "^1.4.1"
+        "pusher-js": "^7.0.0",
+        "v-jsoneditor": "^1.4.1",
+        "vue-terminal-ui": "^0.1.6"
     }
 }
