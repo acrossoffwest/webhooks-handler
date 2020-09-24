@@ -105,7 +105,7 @@
             this.form = this.webhook
 
             if (this.form.id) {
-                Echo.private('webhooks.' + this.form.id)
+                Echo.channel('webhooks.' + this.form.id)
                     .listen('WebhookCallEvent', (e) => {
                         this.addNewLineToTerminal(`Method: ${e.method}`)
                         this.addNewLineToTerminal(`URL: ${e.url}`)
