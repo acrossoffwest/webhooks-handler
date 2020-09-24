@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\WebhookCallEvent;
+use App\Models\User;
 use App\Models\Webhook;
-use App\Jobs\WebhookProxyJob;
 use Illuminate\Http\Request;
+use App\Jobs\WebhookProxyJob;
+use App\Events\WebhookCallEvent;
 
 class WebhooksHandlerController extends Controller
 {
-    public function __invoke(Request $request, int $userId, string $slug)
+    public function __invoke(Request $request, string $broadcastingToken, string $slug)
     {
+        $user = User::query()->where('broadcasting_token', $broadcastingToken)->firstOrFail();
         /** @var Webhook $webhook */
-        $webhook = Webhook::query()->where('user_id', $userId)->where('in', $slug)->firstOrFail();
+        $webhook = Webhook::query()
+            ->where('user_id', $user->id)
+            ->where('in', $slug)
+            ->firstOrFail();
+
         $headers = $request->header();
         $payload = $request->all();
-
         broadcast(new WebhookCallEvent(
             $webhook,
             $request->fullUrl(),

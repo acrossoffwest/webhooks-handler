@@ -2,7 +2,11 @@ import Vue from 'vue'
 import DataTable from 'laravel-vue-datatable';
 import VJsoneditor from 'v-jsoneditor'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import Clipboard from 'v-clipboard'
+import Toasted from 'vue-toasted'
 
+Vue.use(Toasted)
+Vue.use(Clipboard)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VJsoneditor)

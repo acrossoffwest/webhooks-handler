@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
@@ -54,5 +55,19 @@ class User extends Authenticatable
     public function webhooks()
     {
         return $this->hasMany(Webhook::class);
+    }
+
+
+
+    public function getSafeBroadcastingTokenAttribute(): string
+    {
+        if (!empty($this->broadcasting_token)) {
+            return $this->broadcasting_token;
+        }
+
+        $this->broadcasting_token = str_random(16);
+        $this->save();
+
+        return $this->broadcasting_token;
     }
 }

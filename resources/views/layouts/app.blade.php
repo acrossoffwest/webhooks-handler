@@ -36,6 +36,15 @@
                         <li>
                             <a href="{{ route('webhooks.index') }}">Webhooks</a>
                         </li>
+                        @guest
+                        @else
+                            <li style="margin-left: 15px;">
+                                <span>Broadcasting token: {{ auth()->user()->safeBroadcastingToken }}</span>
+                                <button v-clipboard="'{{ auth()->user()->safeBroadcastingToken }}'" v-clipboard:success="() => { $toasted.show('Copied', {duration: 1500}) }">
+                                    Copy
+                                </button>
+                            </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->

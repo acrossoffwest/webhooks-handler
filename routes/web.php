@@ -23,10 +23,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('auth:web')->group(function () {
     Route::resource('webhooks', \App\Http\Controllers\WebhookController::class);
     Route::get('api/token', [\App\Http\Controllers\ApiTokenController::class, 'update']);
+    Route::get('api/broadcasting/token', [\App\Http\Controllers\BroadcastingTokenController::class, 'show']);
     Route::get('api/webhooks', [\App\Http\Controllers\Api\WebhookController::class, 'index']);
 });
 
-Route::any('api/webhook/endpoints/{user_id}/{slug}', 'App\Http\Controllers\WebhooksHandlerController')->name('endpoints');
+Route::any('api/webhook/endpoints/{broadcasting_token}/{slug}', 'App\Http\Controllers\WebhooksHandlerController')->name('endpoints');
 Route::any('api/write/log', function () {
     logs()->info('TEST REQUEST');
     return response()->json([

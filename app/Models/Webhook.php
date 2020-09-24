@@ -47,7 +47,7 @@ class Webhook extends Model
     public function getEndpointAttribute()
     {
         return route('endpoints', [
-            'user_id' => $this->user_id,
+            'broadcasting_token' => $this->user->safeBroadcastingToken,
             'slug' => $this->in
         ]);
     }
