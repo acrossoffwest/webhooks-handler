@@ -34,6 +34,7 @@ RUN apt-get -y install supervisor && \
   mkdir -p /var/log/supervisor && \
   mkdir -p /etc/supervisor
 
+RUN apt update
 RUN apt-get install -y libmagickwand-dev --no-install-recommends
 RUN pecl install imagick && docker-php-ext-enable imagick
 
