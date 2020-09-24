@@ -17,6 +17,6 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('webhooks.{webhook}', function (\App\Models\User $user, \App\Models\Webhook $webhook) {
+Broadcast::channel('webhooks.{webhook}', function () {
     return true;
 });
