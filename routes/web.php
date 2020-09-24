@@ -35,3 +35,5 @@ Route::any('api/write/log', function () {
         'payload' => request()->all()
     ]);
 })->name('api.write.log');
+
+Route::any('api/{broadcasting_token}/webhooks', 'App\Http\Controllers\WebhooksByBroadcastingTokenController')->name('webhooks');
