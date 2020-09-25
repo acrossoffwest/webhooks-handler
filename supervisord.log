@@ -243,3 +243,122 @@
 2020-09-24 14:31:10,294 INFO reaped unknown pid 96
 2020-09-24 14:31:10,319 INFO exited: misc (exit status 0; not expected)
 2020-09-24 14:31:11,320 INFO gave up: misc entered FATAL state, too many start retries too quickly
+2020-09-24 15:48:02,791 WARN received SIGQUIT indicating exit request
+2020-09-24 15:48:02,795 INFO waiting for php-fpm, laravel-worker_00, laravel-worker_01, laravel-worker_02, laravel-worker_03 to die
+2020-09-24 15:48:03,811 INFO stopped: php-fpm (exit status 0)
+2020-09-24 15:48:03,820 INFO stopped: laravel-worker_00 (exit status 0)
+2020-09-24 15:48:03,820 INFO stopped: laravel-worker_03 (exit status 0)
+2020-09-24 15:48:03,822 INFO stopped: laravel-worker_01 (exit status 0)
+2020-09-24 15:48:05,825 INFO waiting for laravel-worker_02 to die
+2020-09-24 15:48:06,830 INFO stopped: laravel-worker_02 (exit status 0)
+2020-09-25 12:57:35,500 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-09-25 12:57:35,500 INFO Included extra file "/etc/supervisor/conf.d/laravel-worker.conf" during parsing
+2020-09-25 12:57:35,503 INFO supervisord started with pid 1
+2020-09-25 12:57:36,518 INFO spawned: 'laravel-worker_00' with pid 9
+2020-09-25 12:57:36,522 INFO spawned: 'laravel-worker_01' with pid 10
+2020-09-25 12:57:36,525 INFO spawned: 'laravel-worker_02' with pid 11
+2020-09-25 12:57:36,529 INFO spawned: 'laravel-worker_03' with pid 12
+2020-09-25 12:57:36,533 INFO spawned: 'php-fpm' with pid 13
+2020-09-25 12:57:36,551 INFO spawned: 'misc' with pid 14
+2020-09-25 12:57:36,617 INFO exited: misc (exit status 0; not expected)
+2020-09-25 12:57:37,880 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 12:57:37,880 INFO success: laravel-worker_01 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 12:57:37,880 INFO success: laravel-worker_02 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 12:57:37,880 INFO success: laravel-worker_03 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 12:57:37,880 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 12:57:37,883 INFO spawned: 'misc' with pid 59
+2020-09-25 12:57:37,916 INFO reaped unknown pid 32
+2020-09-25 12:57:37,950 INFO exited: misc (exit status 0; not expected)
+2020-09-25 12:57:39,955 INFO spawned: 'misc' with pid 78
+2020-09-25 12:57:39,989 INFO reaped unknown pid 77
+2020-09-25 12:57:40,022 INFO exited: misc (exit status 0; not expected)
+2020-09-25 12:57:43,027 INFO spawned: 'misc' with pid 97
+2020-09-25 12:57:43,038 INFO reaped unknown pid 96
+2020-09-25 12:57:43,063 INFO exited: misc (exit status 0; not expected)
+2020-09-25 12:57:44,064 INFO gave up: misc entered FATAL state, too many start retries too quickly
+2020-09-25 13:11:17,863 WARN received SIGQUIT indicating exit request
+2020-09-25 13:11:17,863 INFO waiting for php-fpm, laravel-worker_00, laravel-worker_01, laravel-worker_02, laravel-worker_03 to die
+2020-09-25 13:11:18,878 INFO stopped: php-fpm (exit status 0)
+2020-09-25 13:11:18,899 INFO stopped: laravel-worker_03 (exit status 0)
+2020-09-25 13:11:18,899 INFO stopped: laravel-worker_01 (exit status 0)
+2020-09-25 13:11:18,901 INFO stopped: laravel-worker_00 (exit status 0)
+2020-09-25 13:11:18,901 INFO stopped: laravel-worker_02 (exit status 0)
+2020-09-25 13:14:35,978 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-09-25 13:14:35,978 INFO Included extra file "/etc/supervisor/conf.d/laravel-worker.conf" during parsing
+2020-09-25 13:14:35,980 INFO supervisord started with pid 1
+2020-09-25 13:14:36,984 INFO spawned: 'laravel-worker_00' with pid 8
+2020-09-25 13:14:36,987 INFO spawned: 'laravel-worker_01' with pid 9
+2020-09-25 13:14:36,990 INFO spawned: 'laravel-worker_02' with pid 10
+2020-09-25 13:14:36,994 INFO spawned: 'laravel-worker_03' with pid 11
+2020-09-25 13:14:37,002 INFO spawned: 'php-fpm' with pid 12
+2020-09-25 13:14:37,006 INFO spawned: 'misc' with pid 13
+2020-09-25 13:14:37,050 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:14:38,061 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 13:14:38,061 INFO success: laravel-worker_01 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 13:14:38,061 INFO success: laravel-worker_02 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 13:14:38,061 INFO success: laravel-worker_03 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 13:14:38,061 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 13:14:38,063 INFO spawned: 'misc' with pid 57
+2020-09-25 13:14:38,090 INFO reaped unknown pid 30
+2020-09-25 13:14:38,125 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:14:40,130 INFO spawned: 'misc' with pid 76
+2020-09-25 13:14:40,167 INFO reaped unknown pid 75
+2020-09-25 13:14:40,195 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:14:43,199 INFO spawned: 'misc' with pid 95
+2020-09-25 13:14:43,216 INFO reaped unknown pid 94
+2020-09-25 13:14:43,241 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:14:44,242 INFO gave up: misc entered FATAL state, too many start retries too quickly
+2020-09-25 13:15:01,343 INFO reaped unknown pid 124
+2020-09-25 13:19:36,635 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-09-25 13:19:36,635 INFO Included extra file "/etc/supervisor/conf.d/laravel-worker.conf" during parsing
+2020-09-25 13:19:36,637 INFO supervisord started with pid 1
+2020-09-25 13:19:37,639 INFO spawned: 'laravel-worker_00' with pid 13
+2020-09-25 13:19:37,643 INFO spawned: 'laravel-worker_01' with pid 14
+2020-09-25 13:19:37,646 INFO spawned: 'laravel-worker_02' with pid 15
+2020-09-25 13:19:37,650 INFO spawned: 'laravel-worker_03' with pid 16
+2020-09-25 13:19:37,654 INFO spawned: 'php-fpm' with pid 17
+2020-09-25 13:19:37,658 INFO spawned: 'misc' with pid 18
+2020-09-25 13:19:37,697 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:19:37,786 INFO exited: laravel-worker_00 (exit status 1; not expected)
+2020-09-25 13:19:37,802 INFO exited: laravel-worker_02 (exit status 1; not expected)
+2020-09-25 13:19:37,814 INFO exited: laravel-worker_01 (exit status 1; not expected)
+2020-09-25 13:19:37,814 INFO exited: laravel-worker_03 (exit status 1; not expected)
+2020-09-25 13:19:38,818 INFO spawned: 'laravel-worker_00' with pid 39
+2020-09-25 13:19:38,821 INFO spawned: 'laravel-worker_01' with pid 40
+2020-09-25 13:19:38,825 INFO spawned: 'laravel-worker_02' with pid 41
+2020-09-25 13:19:38,828 INFO spawned: 'laravel-worker_03' with pid 42
+2020-09-25 13:19:38,829 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-25 13:19:38,831 INFO spawned: 'misc' with pid 43
+2020-09-25 13:19:38,855 INFO reaped unknown pid 36
+2020-09-25 13:19:38,882 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:19:38,946 INFO exited: laravel-worker_01 (exit status 1; not expected)
+2020-09-25 13:19:38,946 INFO exited: laravel-worker_00 (exit status 1; not expected)
+2020-09-25 13:19:38,969 INFO exited: laravel-worker_02 (exit status 1; not expected)
+2020-09-25 13:19:38,970 INFO exited: laravel-worker_03 (exit status 1; not expected)
+2020-09-25 13:19:40,974 INFO spawned: 'laravel-worker_00' with pid 62
+2020-09-25 13:19:40,978 INFO spawned: 'laravel-worker_01' with pid 63
+2020-09-25 13:19:40,982 INFO spawned: 'laravel-worker_02' with pid 64
+2020-09-25 13:19:40,986 INFO spawned: 'laravel-worker_03' with pid 65
+2020-09-25 13:19:40,988 INFO spawned: 'misc' with pid 66
+2020-09-25 13:19:41,010 INFO reaped unknown pid 61
+2020-09-25 13:19:41,038 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:19:41,101 INFO exited: laravel-worker_01 (exit status 1; not expected)
+2020-09-25 13:19:41,104 INFO exited: laravel-worker_02 (exit status 1; not expected)
+2020-09-25 13:19:41,140 INFO exited: laravel-worker_00 (exit status 1; not expected)
+2020-09-25 13:19:41,144 INFO exited: laravel-worker_03 (exit status 1; not expected)
+2020-09-25 13:19:44,149 INFO spawned: 'laravel-worker_00' with pid 85
+2020-09-25 13:19:44,152 INFO spawned: 'laravel-worker_01' with pid 86
+2020-09-25 13:19:44,155 INFO spawned: 'laravel-worker_02' with pid 87
+2020-09-25 13:19:44,159 INFO spawned: 'laravel-worker_03' with pid 88
+2020-09-25 13:19:44,163 INFO spawned: 'misc' with pid 89
+2020-09-25 13:19:44,191 INFO reaped unknown pid 84
+2020-09-25 13:19:44,217 INFO exited: misc (exit status 0; not expected)
+2020-09-25 13:19:44,276 INFO gave up: misc entered FATAL state, too many start retries too quickly
+2020-09-25 13:19:44,281 INFO exited: laravel-worker_02 (exit status 1; not expected)
+2020-09-25 13:19:44,282 INFO gave up: laravel-worker_02 entered FATAL state, too many start retries too quickly
+2020-09-25 13:19:44,282 INFO exited: laravel-worker_00 (exit status 1; not expected)
+2020-09-25 13:19:44,283 INFO gave up: laravel-worker_00 entered FATAL state, too many start retries too quickly
+2020-09-25 13:19:44,284 INFO exited: laravel-worker_01 (exit status 1; not expected)
+2020-09-25 13:19:44,287 INFO gave up: laravel-worker_01 entered FATAL state, too many start retries too quickly
+2020-09-25 13:19:44,287 INFO exited: laravel-worker_03 (exit status 1; not expected)
+2020-09-25 13:19:45,288 INFO gave up: laravel-worker_03 entered FATAL state, too many start retries too quickly

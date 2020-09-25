@@ -59,18 +59,14 @@
             </b-collapse>
 
             <b-button type="submit" variant="primary">Save</b-button>
-            <b-button v-b-toggle.collapse-1 variant="primary">Send request</b-button>
+            <b-button v-if="form.id" v-b-toggle.collapse-1 variant="primary">Send request</b-button>
         </b-form>
         <b-collapse id="collapse-1" class="mt-2">
             <b-card>
                 <http-request-sender></http-request-sender>
             </b-card>
         </b-collapse>
-        <br>
-        <br>
-        <br>
-
-        <vue-terminal :intro="terminalText" :key="rerender" style="pointer-events: none"></vue-terminal>
+        <vue-terminal v-if="form.id" :intro="terminalText" :key="rerender" style="pointer-events: none; margin-top: 15px;"></vue-terminal>
     </div>
 </template>
 
