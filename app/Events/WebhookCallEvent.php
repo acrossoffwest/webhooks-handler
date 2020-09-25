@@ -38,6 +38,6 @@ class WebhookCallEvent implements ShouldBroadcast
 
     public function broadcastOn()
     {
-        return new Channel('webhooks.'.$this->webhook->id);
+        return new Channel('users.'.$this->webhook->user->safeBroadcastingToken.'.webhooks.'.$this->webhook->in.'.in.'.$this->webhook->id);
     }
 }

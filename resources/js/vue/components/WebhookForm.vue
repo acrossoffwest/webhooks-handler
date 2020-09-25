@@ -82,6 +82,10 @@
                 required: true
             },
             userId: {
+                type: Number,
+                required: true
+            },
+            userBroadcastingToken: {
                 type: String,
                 required: true
             },
@@ -101,7 +105,8 @@
             this.form = this.webhook
 
             if (this.form.id) {
-                Echo.channel('webhooks.' + this.form.id)
+                console.log(this.webhook.channel)
+                Echo.channel(this.webhook.channel)
                     .listen('WebhookCallEvent', (e) => {
                         this.addNewLineToTerminal(`Method: ${e.method}`)
                         this.addNewLineToTerminal(`URL: ${e.url}`)
@@ -142,7 +147,7 @@
                 return JSON.stringify(this.form.default_payload)
             },
             fullUrl () {
-                return this.form.in ? `${this.baseUrl}/api/webhook/endpoints/${this.userId}/${this.form.in}` : null
+                return this.form.in ? `${this.baseUrl}/api/webhook/endpoints/${this.userBroadcastingToken}/${this.form.in}` : null
             }
         },
         methods: {

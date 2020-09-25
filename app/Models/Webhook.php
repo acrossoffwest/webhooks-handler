@@ -29,7 +29,8 @@ class Webhook extends Model
     ];
 
     protected $appends = [
-        'endpoint'
+        'endpoint',
+        'channel'
     ];
 
     protected $casts = [
@@ -50,5 +51,10 @@ class Webhook extends Model
             'broadcasting_token' => $this->user->safeBroadcastingToken,
             'slug' => $this->in
         ]);
+    }
+
+    public function getChannelAttribute()
+    {
+        return 'users.'.$this->user->safeBroadcastingToken.'.webhooks.'.$this->id.'.in.'.$this->in;
     }
 }

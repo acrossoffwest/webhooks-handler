@@ -8,7 +8,7 @@
 
                 <div class="card-body">
                     <webhook-form
-                        @if(isset($webhook)):webhook="{{ json_encode($webhook) }}" @endif user-id="{{ auth()->user()->safeBroadcastingToken }}" base-url="{{ config('app.url') }}"
+                        @if(isset($webhook)):webhook="{{ json_encode($webhook) }}" @endif :user-id="{{ auth()->user()->id }}" user-broadcasting-token="{{ auth()->user()->safeBroadcastingToken }}" base-url="{{ config('app.url') }}"
                     ></webhook-form>
                 </div>
             </div>
