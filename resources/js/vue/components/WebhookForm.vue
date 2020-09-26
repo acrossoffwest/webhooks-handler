@@ -41,6 +41,17 @@
                 ></b-form-input>
             </b-form-group>
 
+            <b-form-group id="input-group-5" label="Your outcoming full URL endpoint:" label-for="input-2"
+                          description="It's will proxied only when you are here in the page. Note: Make sure your local project allowing CORS">
+                <b-form-input
+                    id="input-5"
+                    v-model="form.out_local"
+                    name="out_local"
+                    required
+                    placeholder="Enter local full URL for proxying your webhooks in the page"
+                ></b-form-input>
+            </b-form-group>
+
             <b-button v-b-toggle.collapse-default-headers variant="primary">Set default headers</b-button>
             <b-collapse id="collapse-default-headers" class="mt-2">
                 <b-form-group id="input-group-4" label="Default headers" label-for="input-3" description="Default header will merged/assigned to your outcoming requests">
@@ -111,6 +122,9 @@
                         this.addNewLineToTerminal(`Method: ${e.method}`)
                         this.addNewLineToTerminal(`URL: ${e.url}`)
                         this.addNewLineToTerminal(`Payload: ${JSON.stringify(e.payload)}`)
+                        this.addNewLineToTerminal(`________________________________________________________________________`)
+
+                        this.makeProxyRequest(e)
                     })
             }
 
@@ -151,6 +165,17 @@
             }
         },
         methods: {
+            async makeProxyRequest ({headers, payload, url, method, webhook}) {
+                try {
+                    if (method.toLowerCase() === 'get') {
+                        axios[method.toLowerCase()](webhook.out_local, headers)
+                        return
+                    }
+                    axios[method.toLowerCase()](webhook.out_local, payload, headers)
+                } catch (e) {
+
+                }
+            },
             addNewLineToTerminal (newLine) {
                 this.terminalText += newLine + '<br>\n'
                 ++this.rerender

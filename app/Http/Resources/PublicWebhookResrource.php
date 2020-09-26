@@ -19,6 +19,7 @@ class PublicWebhookResrource extends JsonResource
             'in' => $this->in,
             'endpoint' => $this->endpoint,
             'outcoming' => $this->out,
+            'outcoming_local' => $this->out_local,
         ];
     }
 }
