@@ -57,7 +57,7 @@ class WebhookProxyJob implements ShouldQueue
 
         if (is_string($response)) {
             try {
-                return json_decode($response, true);
+                return json_decode($response, true) ?? [];
             } catch (\Exception $ex) {}
         }
 
