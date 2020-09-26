@@ -16,6 +16,7 @@ class PublicWebhookResrource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'in' => $this->in,
             'endpoint' => $this->endpoint,
             'outcoming' => $this->out,
         ];
