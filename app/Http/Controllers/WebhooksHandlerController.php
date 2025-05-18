@@ -31,13 +31,18 @@ class WebhooksHandlerController extends Controller
         dispatch(new WebhookProxyJob($webhook, $payload, $headers));
 
 
-        $response = $webhook->default_response;
+        $response = $webhook->default_payload;
         $code = $webhook->default_response_code ?? 200;
 
-        if ($webhook->default_response_type === 'json') {
+        if ($webhook->default_response_type === 'json' || $this->isJson($response)) {
             return response()->json($this->decodeResponse($response), $code);
         }
         return response($response, $code);
+    }
+
+    private function isJson($string) {
+        $obj = json_decode($string);
+        return json_last_error() === JSON_ERROR_NONE && gettype($obj ) == "object";
     }
 
     public function decodeResponse($response = null): array
@@ -52,7 +57,12 @@ class WebhooksHandlerController extends Controller
 
         if (is_string($response)) {
             try {
-                return json_decode($response, true);
+                $data = json_decode($response, true);
+                logs()->info("Response was decoded as null: ".$response);
+                if (empty($data)) {
+                    return [];
+                }
+                return $data;
             } catch (\Exception $ex) {}
         }
 
